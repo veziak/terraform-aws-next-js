@@ -1,5 +1,5 @@
-output "static_upload_bucket_id" {
-  value = module.statics_deploy.static_upload_bucket_id
+output "static_files_archive" {
+  value = local.static_files_archive
 }
 
 ##################################
