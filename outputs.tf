@@ -2,6 +2,11 @@ output "static_files_archive" {
   value = local.static_files_archive
 }
 
+output "static_upload_bucket_id" {
+  value = module.statics_deploy.static_upload_bucket_id
+}
+
+
 ##################################
 # Internal CloudFront distribution
 ##################################
