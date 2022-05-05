@@ -55,7 +55,10 @@ export async function deployTrigger({
     Bucket: sourceBucket,
     VersionId: versionId,
   };
-
+  
+  
+  console.info("deployTrigger started")
+  
   // Get the buildId from the metadata of the package
   // If none is present, create a random id
   const zipHeaders = await s3.headObject(params).promise();
@@ -127,6 +130,8 @@ export async function deployTrigger({
 
   // Cleanup
   await s3.deleteObject(params).promise();
+  
+  console.info("deployTrigger finished")
 
   return {
     files,
